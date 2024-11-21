@@ -88,7 +88,8 @@ try
     matrix<float, 0, 1> ref_descriptor = net(ref_faces[0]);
 
     // Start video capture loop
-    VideoCapture cap(0);
+    // VideoCapture cap(0);
+    cv::VideoCapture cap("udp://@:2020", cv::CAP_FFMPEG);
     if (!cap.isOpened())
     {
         cerr << "Error: Could not open the camera." << endl;
@@ -160,7 +161,6 @@ try
         {
             break;
         }
-        std::this_thread::sleep_for(std::chrono::seconds(2));
     }
 
     return 0;

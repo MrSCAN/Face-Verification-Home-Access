@@ -1,11 +1,11 @@
-LDFLAGS = -ldlib -lpthread -ljpeg -lpng -lX11 -lopenblas `pkg-config --cflags --libs opencv`
+LDFLAGS = -ldlib -lpthread -ljpeg -lpng -lX11 -lopenblas -lsqlite3 `pkg-config --cflags --libs opencv`
 
 
 # Define the target executable name
 TARGET = main
 
 # Define the source files
-SRC = main2.cc
+SRC = main_pi.cc face_features.cc face_features.hh db_utils.cc db_utils.hh
 
 # Define the output directories for object and binary files
 OBJ_DIR = obj
